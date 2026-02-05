@@ -1,3 +1,4 @@
+# Verifies that B_n is increasing for 0 < n < 55
 import mpmath as mp
 
 mp.mp.dps = 80

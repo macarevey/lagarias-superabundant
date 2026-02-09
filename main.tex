@@ -159,7 +159,7 @@ Also
 \[
 x\frac{H'(x)}{H(x)}\ge \frac{x}{(x+1)H(x)}.
 \]
-Since $x\ge 1$ implies $H(x)\ge \log(x+1)\ge \log 2>0$, we have $\log(H(x))\ge 0$. Therefore
+By \eqref{lem:lower_bounds}, $H'(x) \geq \frac{1}{x+1} > 0$ for $x \geq 1$, so $H(x)$ is increasing on $[1, \infty)$. Since $H(1) = 1$, it follows that $H(x) \geq 1$ for all $x \geq 1$, hence $\log(H(x)) \geq 0$. Therefore
 \[
 (xH'(x)-1)\log(H(x))\ge -\frac{1}{x+1}\log(H(x)).
 \]
@@ -174,9 +174,6 @@ N(x)\ge xH'(x)-H(x)+\frac{e^{H(x)}}{x+1}\left(\frac{x}{H(x)}-\log(H(x))\right).
 Finally use $xH'(x)\ge \frac{x}{x+1}$ to obtain \eqref{eq:N_lower_bound}.
 \end{proof}
 
-% -----------------------------
-% The missing sign lemma (fix)
-% -----------------------------
 \begin{lemma}\label{lem:Q_positive}
 For every $x\ge 1$,
 \begin{equation}\label{eq:Qdef}
@@ -217,7 +214,7 @@ From \eqref{eq:upper_bound}, $H(x)\le 1+\log x$, so
 \[
 -H(x)\ge -(1+\log x).
 \]
-Also since $H(x)\le 1+\log x$ and both are positive, we have
+Since $H(x) > 0$ and $1 + \log(x) > 0$ for $x \geq 1$, we have
 \[
 \frac{1}{H(x)}\ge \frac{1}{1+\log x},
 \qquad
@@ -228,17 +225,13 @@ Thus
 \frac{x}{H(x)}-\log(H(x))\ge \frac{x}{1+\log x}-\log(1+\log x).
 \]
 Using \eqref{eq:lower_bound}, $e^{H(x)}\ge x+1$, so $\frac{e^{H(x)}}{x+1}\ge 1$.
-By Lemma~\ref{lem:Q_positive}, the quantity
-\[
-\frac{x}{1+\log x}-\log(1+\log x)
-\]
-is nonnegative for $x\ge 1$. Therefore multiplying it by a factor $\ge 1$ preserves a lower bound:
+Lemma~\ref{lem:Q_positive} yields
 \[
 \frac{e^{H(x)}}{x+1}\left(\frac{x}{1+\log x}-\log(1+\log x)\right)
 \ge
 \left(\frac{x}{1+\log x}-\log(1+\log x)\right).
 \]
-Putting these together yields
+Combining these inequalities gives
 \[
 N(x)\ge \frac{x}{x+1}-(1+\log x)+\frac{x}{1+\log x}-\log(1+\log x)=G(x).
 \]

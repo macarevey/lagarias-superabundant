@@ -40,7 +40,7 @@ A number $n\in\mathbb{N}$ is called \emph{superabundant} if for all $m<n$,
 
 \section{The Lagarias Inequality}
 
-Let $\psi(x)=\frac{\Gamma'(x)}{\Gamma(x)}$ denote the digamma function and $\gamma$ the Euler--Mascheroni constant. For $x>0$, define the continuous extension of the harmonic numbers by
+Let $\psi(x)=\frac{\Gamma'(x)}{\Gamma(x)}$ denote the digamma function and $\gamma$ the Euler--Mascheroni constant. For $x\geq0$, define the continuous extension of the harmonic numbers by
 \[
 H(x):=\psi(x+1)+\gamma,
 \]
@@ -159,7 +159,7 @@ Also
 \[
 x\frac{H'(x)}{H(x)}\ge \frac{x}{(x+1)H(x)}.
 \]
-By \eqref{lem:lower_bounds}, $H'(x) \geq \frac{1}{x+1} > 0$ for $x \geq 1$, so $H(x)$ is increasing on $[1, \infty)$. Since $H(1) = 1$, it follows that $H(x) \geq 1$ for all $x \geq 1$, hence $\log(H(x)) \geq 0$. Therefore
+By Lemma~\ref{lem:lower_bounds}, $H'(x) \geq \frac{1}{x+1} > 0$ for $x \geq 1$, so $H(x)$ is increasing on $[1, \infty)$. Since $H(1) = 1$, it follows that $H(x) \geq 1$ for all $x \geq 1$, hence $\log(H(x)) \geq 0$. Therefore
 \[
 (xH'(x)-1)\log(H(x))\ge -\frac{1}{x+1}\log(H(x)).
 \]
@@ -312,25 +312,15 @@ If there are counterexamples to the Lagarias inequality, the smallest such count
 \end{theorem}
 
 \begin{proof}
-Suppose, for sake of contradiction, that $m$ is the smallest counterexample to \eqref{eq:Lagarias}. Then
+Suppose, for the sake of contradiction, that $m$ is the smallest counterexample to \eqref{eq:Lagarias} and that $m$ is not superabundant.
+Let $n<m$ be the greatest superabundant number less than $m$. Since $m$ is not superabundant, there exists $k<m$ with
+$\frac{\sigma(k)}{k}\ge \frac{\sigma(m)}{m}$; taking $k$ with maximal $\frac{\sigma(k)}{k}$ among $1\le j<m$ makes $k$ superabundant, hence $k\le n$, so
+$\frac{\sigma(n)}{n}\ge \frac{\sigma(m)}{m}$.
+Thus
 \[
-\frac{\sigma(m)}{m}>\frac{H_m+\exp(H_m)\log(H_m)}{m}=:B_m.
+\frac{\sigma(n)}{n}\ \ge\ \frac{\sigma(m)}{m}\ >\ B_m\ >\ B_n,
 \]
-Let $n$ be the least integer $1\le n<m$ such that
-\[
-\frac{\sigma(n)}{n}=\max_{1\le k<m}\frac{\sigma(k)}{k}.
-\]
-Then by minimality of $n$, for every $k<n$ we have $\frac{\sigma(k)}{k}<\frac{\sigma(n)}{n}$, so $n$ is superabundant.
-Moreover, by maximality,
-\[
-\frac{\sigma(n)}{n}\ge \frac{\sigma(m)}{m}.
-\]
-By Corollary~\ref{cor:Bn_strict}, the sequence $\{B_n\}$ is strictly increasing, so since $n<m$ we have $B_m>B_n$.
-Hence
-\[
-\frac{\sigma(n)}{n}\ge \frac{\sigma(m)}{m}>B_m>B_n=\frac{H_n+\exp(H_n)\log(H_n)}{n}.
-\]
-Thus $n<m$ is also a counterexample to \eqref{eq:Lagarias}, contradicting the minimality of $m$.
+so $n<m$ is also a counterexample, contradicting the minimality of $m$. Hence $m$ must be superabundant.
 \end{proof}
 
 \begin{thebibliography}{9}

@@ -11,7 +11,7 @@
 
 \title{On the Lagarias Inequality and Superabundant Numbers}
 \author{Andrew MacArevey}
-\date{January 2026}
+\date{February 2026}
 
 \begin{document}
 
@@ -32,7 +32,6 @@ Lagarias \cite{Lagarias2002} proved that the Riemann Hypothesis is true if and o
 \begin{equation}\label{eq:Lagarias}
 \sigma(n)\le H_n+\exp(H_n)\log(H_n).
 \end{equation}
-
 A number $n\in\mathbb{N}$ is called \emph{superabundant} if for all $m<n$,
 \[
 \frac{\sigma(m)}{m}<\frac{\sigma(n)}{n}.
@@ -109,7 +108,6 @@ Compute the integral:
 \int_0^\infty \frac{1}{(x+1+t)^2}\,dt=\frac{1}{x+1}.
 \]
 Hence $\psi'(x+1)\ge \frac{1}{x+1}$ and therefore $f'(x)\ge 0$ for all $x\ge 0$. Since $f(0)=0$, we have $f(x)\ge 0$ for all $x\ge 0$, i.e.\ $H(x)\ge \log(x+1)$ for $x\ge 0$, in particular for $x\ge 1$.
-
 Finally, \eqref{eq:derivative_bound} follows since $H'(x)=\psi'(x+1)\ge \frac{1}{x+1}$.
 \end{proof}
 
@@ -268,7 +266,6 @@ B_n=\frac{H_n+e^{H_n}\log(H_n)}{n}.
 \begin{proof}
 Fix $x\ge e^4$. By Lemma~\ref{lem:derivative_formula}, it suffices to show $N(x)>0$.
 By Lemma~\ref{lem:N_ge_G}, it suffices to show $G(x)>0$.
-
 Set $t=\log x$ and $u=t+1=1+\log x$. Then $t\ge 4$ and \eqref{eq:G_lower_bound} gives
 \[
 G(x)=\frac{x}{x+1}-u+\frac{x}{u}-\log u.
@@ -312,15 +309,14 @@ If there are counterexamples to the Lagarias inequality, the smallest such count
 \end{theorem}
 
 \begin{proof}
-Suppose, for the sake of contradiction, that $m$ is the smallest counterexample to \eqref{eq:Lagarias} and that $m$ is not superabundant.
-Let $n<m$ be the greatest superabundant number less than $m$. Since $m$ is not superabundant, there exists $k<m$ with
-$\frac{\sigma(k)}{k}\ge \frac{\sigma(m)}{m}$; taking $k$ with maximal $\frac{\sigma(k)}{k}$ among $1\le j<m$ makes $k$ superabundant, hence $k\le n$, so
-$\frac{\sigma(n)}{n}\ge \frac{\sigma(m)}{m}$.
-Thus
+Suppose, for the sake of contradiction, that $m$ is the smallest counterexample to \eqref{eq:Lagarias} and that $m$ is not superabundant. Let $n<m$ be the greatest superabundant number less than $m$. Since $m$ is not superabundant, there exists $j<m$ with $\frac{\sigma(j)}{j}\ge \frac{\sigma(m)}{m}$.
+Let $k$ be the least integer $<m$ for which $\frac{\sigma(k)}{k}$ is maximal among $1\le j<m$.
+Then $k$ is superabundant, so $k\le n$, and hence $\frac{\sigma(n)}{n}\ge \frac{\sigma(k)}{k}\ge \frac{\sigma(m)}{m}$. Thus
 \[
 \frac{\sigma(n)}{n}\ \ge\ \frac{\sigma(m)}{m}\ >\ B_m\ >\ B_n,
 \]
-so $n<m$ is also a counterexample, contradicting the minimality of $m$. Hence $m$ must be superabundant.
+so $n<m$ is also a counterexample, contradicting the minimality of $m$.
+Hence $m$ must be superabundant.
 \end{proof}
 
 \begin{thebibliography}{9}
